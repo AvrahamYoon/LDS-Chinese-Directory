@@ -15,19 +15,20 @@ const regionLabels: Record<BranchRegion, Record<Locale, string>> = {
   california: { en: "California", zh: "加州" },
   canada: { en: "Canada", zh: "加拿大" },
   "hong-kong": { en: "Hong Kong", zh: "香港" },
+  florida: { en: "Florida", zh: "佛羅里達" },
   macau: { en: "Macau", zh: "澳門" },
   malaysia: { en: "Malaysia", zh: "馬來西亞" },
+  maryland: { en: "Maryland", zh: "馬里蘭" },
   massachusetts: { en: "Massachusetts", zh: "麻薩諸塞" },
-  "mid-atlantic": { en: "Mid-Atlantic", zh: "美國中大西洋" },
   nevada: { en: "Nevada", zh: "內華達" },
   "new-york": { en: "New York", zh: "紐約" },
   "new-zealand": { en: "New Zealand", zh: "紐西蘭" },
-  "pacific-northwest": { en: "Pacific Northwest", zh: "美國太平洋西北" },
-  southeast: { en: "Southeast", zh: "美國東南" },
   taiwan: { en: "Taiwan", zh: "台灣" },
   texas: { en: "Texas", zh: "德州" },
   "united-kingdom": { en: "United Kingdom", zh: "英國" },
-  utah: { en: "Utah", zh: "猶他" }
+  utah: { en: "Utah", zh: "猶他" },
+  virginia: { en: "Virginia", zh: "維吉尼亞" },
+  washington: { en: "Washington", zh: "華盛頓州" }
 };
 
 const copy = {
