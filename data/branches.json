@@ -1617,6 +1617,27 @@
     "notes": "Chinese address: 台灣彰化市中和路165號. Language: Chinese."
   },
   {
+    "id": "tw-yuanlin-ward",
+    "name": {
+      "en": "Yuanlin Ward",
+      "zhTw": "員林支會"
+    },
+    "type": "ward",
+    "language": "mandarin",
+    "status": "active",
+    "location": {
+      "lat": 23.963957,
+      "lng": 120.582522,
+      "address": "台灣彰化縣員林市成功東路47號",
+      "city": "Changhua County",
+      "state": "Taiwan",
+      "postalCode": "",
+      "country": "TW"
+    },
+    "region": "taiwan",
+    "notes": "Chinese address: 台灣彰化縣員林市成功東路47號. Language: Chinese."
+  },
+  {
     "id": "tw-chang-hua-3rd-ward",
     "name": {
       "en": "Chang Hua 3rd Ward",
