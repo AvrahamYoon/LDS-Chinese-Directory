@@ -22,7 +22,15 @@ export function filterBranches(branches: Branch[], filters: BranchFilters) {
     const matchesType = filters.type === "all" || branch.type === filters.type;
     const matchesLanguage =
       filters.language === "all" || branch.language === filters.language;
+    const matchesRegion =
+      filters.region === "all" || branch.region === filters.region;
 
-    return matchesSearch && matchesStatus && matchesType && matchesLanguage;
+    return (
+      matchesSearch &&
+      matchesStatus &&
+      matchesType &&
+      matchesLanguage &&
+      matchesRegion
+    );
   });
 }

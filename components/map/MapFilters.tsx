@@ -1,17 +1,40 @@
 "use client";
 
-import type { BranchFilters, Locale } from "@/lib/types";
+import type { BranchFilters, BranchRegion, Locale } from "@/lib/types";
 
 type MapFiltersProps = {
+  availableRegions: BranchRegion[];
   filters: BranchFilters;
   locale: Locale;
   onChange: (filters: BranchFilters) => void;
+};
+
+const regionLabels: Record<BranchRegion, Record<Locale, string>> = {
+  arizona: { en: "Arizona", zh: "亞利桑那" },
+  australia: { en: "Australia", zh: "澳洲" },
+  california: { en: "California", zh: "加州" },
+  canada: { en: "Canada", zh: "加拿大" },
+  "hong-kong": { en: "Hong Kong", zh: "香港" },
+  macau: { en: "Macau", zh: "澳門" },
+  malaysia: { en: "Malaysia", zh: "馬來西亞" },
+  massachusetts: { en: "Massachusetts", zh: "麻薩諸塞" },
+  "mid-atlantic": { en: "Mid-Atlantic", zh: "美國中大西洋" },
+  nevada: { en: "Nevada", zh: "內華達" },
+  "new-york": { en: "New York", zh: "紐約" },
+  "new-zealand": { en: "New Zealand", zh: "紐西蘭" },
+  "pacific-northwest": { en: "Pacific Northwest", zh: "美國太平洋西北" },
+  southeast: { en: "Southeast", zh: "美國東南" },
+  taiwan: { en: "Taiwan", zh: "台灣" },
+  texas: { en: "Texas", zh: "德州" },
+  "united-kingdom": { en: "United Kingdom", zh: "英國" },
+  utah: { en: "Utah", zh: "猶他" }
 };
 
 const copy = {
   en: {
     search: "Search",
     searchPlaceholder: "Name, city, or address",
+    region: "Region",
     language: "Language",
     type: "Type",
     status: "Status",
@@ -29,6 +52,7 @@ const copy = {
   zh: {
     search: "搜尋",
     searchPlaceholder: "名稱、城市或地址",
+    region: "區域",
     language: "語言",
     type: "類型",
     status: "狀態",
@@ -39,13 +63,18 @@ const copy = {
     mixed: "混合",
     ward: "支會",
     branch: "分會",
-    active: "活躍",
+    active: "運作中",
     unknown: "待確認",
-    discontinued: "已關停"
+    discontinued: "已停用"
   }
 };
 
-export function MapFilters({ filters, locale, onChange }: MapFiltersProps) {
+export function MapFilters({
+  availableRegions,
+  filters,
+  locale,
+  onChange
+}: MapFiltersProps) {
   const t = copy[locale];
 
   return (
@@ -60,6 +89,25 @@ export function MapFilters({ filters, locale, onChange }: MapFiltersProps) {
           placeholder={t.searchPlaceholder}
           type="search"
         />
+      </label>
+      <label>
+        {t.region}
+        <select
+          value={filters.region}
+          onChange={(event) =>
+            onChange({
+              ...filters,
+              region: event.target.value as BranchFilters["region"]
+            })
+          }
+        >
+          <option value="all">{t.all}</option>
+          {availableRegions.map((region) => (
+            <option key={region} value={region}>
+              {regionLabels[region][locale]}
+            </option>
+          ))}
+        </select>
       </label>
       <label>
         {t.language}

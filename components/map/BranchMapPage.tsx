@@ -24,7 +24,8 @@ const initialFilters: BranchFilters = {
   search: "",
   status: "all",
   type: "all",
-  language: "all"
+  language: "all",
+  region: "all"
 };
 
 const copy = {
@@ -51,6 +52,14 @@ export function BranchMapPage({ branches, locale }: BranchMapPageProps) {
     [branches, filters]
   );
 
+  const availableRegions = useMemo(
+    () =>
+      Array.from(new Set(branches.map((branch) => branch.region))).sort(
+        (a, b) => a.localeCompare(b)
+      ),
+    [branches]
+  );
+
   return (
     <main className="map-page">
       <aside className="map-sidebar" aria-label="Map filters">
@@ -73,7 +82,12 @@ export function BranchMapPage({ branches, locale }: BranchMapPageProps) {
           <h1>{t.title}</h1>
           <p className="sidebar-copy">{t.body}</p>
         </div>
-        <MapFilters filters={filters} locale={locale} onChange={setFilters} />
+        <MapFilters
+          availableRegions={availableRegions}
+          filters={filters}
+          locale={locale}
+          onChange={setFilters}
+        />
         <div className="result-count">
           {t.showing} <strong>{filteredBranches.length}</strong> /{" "}
           {branches.length}

@@ -61,6 +61,7 @@ export type BranchFilters = {
   status: "all" | BranchStatus;
   type: "all" | BranchType;
   language: "all" | BranchLanguage;
+  region: "all" | BranchRegion;
 };
 
 export type Locale = "en" | "zh";
