@@ -49,6 +49,7 @@ function createMarkerIcon(branch: Branch) {
 
 function popupHtml(branch: Branch, locale: Locale) {
   const t = popupCopy[locale];
+  const title = locale === "zh" ? branch.name.zhTw ?? branch.name.en : branch.name.en;
   const address = [
     branch.location.address,
     branch.location.city,
@@ -60,7 +61,7 @@ function popupHtml(branch: Branch, locale: Locale) {
 
   return `
     <div class="branch-popup">
-      <strong>${branch.name.en}</strong>
+      <strong>${title}</strong>
       <p>${address}</p>
       <dl>
         <div><dt>${t.type}</dt><dd>${formatBranchType(

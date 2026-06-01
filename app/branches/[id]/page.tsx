@@ -24,6 +24,7 @@ const copy = {
     status: "Status",
     address: "Meetinghouse address",
     chineseName: "Chinese name",
+    englishName: "English name",
     pending: "To be added",
     officialPage: "Open official church page"
   },
@@ -33,6 +34,7 @@ const copy = {
     status: "狀態",
     address: "聚會教堂地址",
     chineseName: "中文名稱",
+    englishName: "英文名稱",
     pending: "待補",
     officialPage: "前往官方教會頁面"
   }
@@ -59,6 +61,7 @@ export default async function BranchPage({
   ]
     .filter(Boolean)
     .join(", ");
+  const title = locale === "zh" ? branch.name.zhTw ?? branch.name.en : branch.name.en;
 
   return (
     <main className="detail-page">
@@ -67,11 +70,11 @@ export default async function BranchPage({
       </Link>
       <article className="detail-panel">
         <p className="eyebrow">{formatBranchType(branch.type, locale)}</p>
-        <h1>{branch.name.en}</h1>
+        <h1>{title}</h1>
         <dl className="detail-grid">
           <div>
-            <dt>{t.chineseName}</dt>
-            <dd>{branch.name.zhTw ?? t.pending}</dd>
+            <dt>{locale === "zh" ? t.englishName : t.chineseName}</dt>
+            <dd>{locale === "zh" ? branch.name.en : branch.name.zhTw ?? t.pending}</dd>
           </div>
           <div>
             <dt>{t.language}</dt>

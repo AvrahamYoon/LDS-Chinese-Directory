@@ -3,7 +3,7 @@
 const branchRecords: Branch[] = [
   {
     id: "ut-provo-edgemont-22nd",
-    name: { en: "Edgemont 22nd Ward (Chinese)" },
+    name: { en: "Edgemont 22nd Ward (Chinese)", zhTw: "愛治蒙第二十二支會（中文）" },
     type: "ward",
     language: "mandarin",
     status: "active",
@@ -20,7 +20,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ut-provo-ysa-asian-1st",
-    name: { en: "Provo YSA Asian 1st Ward" },
+    name: { en: "Provo YSA Asian 1st Ward", zhTw: "普羅沃單身成人亞洲第一支會" },
     type: "ward",
     language: "asian",
     status: "active",
@@ -37,7 +37,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ut-provo-ysa-asian-2nd",
-    name: { en: "Provo YSA Asian 2nd Ward" },
+    name: { en: "Provo YSA Asian 2nd Ward", zhTw: "普羅沃單身成人亞洲第二支會" },
     type: "ward",
     language: "asian",
     status: "active",
@@ -54,7 +54,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ut-salt-lake-6th-chinese",
-    name: { en: "Salt Lake 6th Ward (Chinese)" },
+    name: { en: "Salt Lake 6th Ward (Chinese)", zhTw: "鹽湖城第六支會（中文）" },
     type: "ward",
     language: "mandarin",
     status: "active",
@@ -71,7 +71,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ut-logan-foothills-3rd-mandarin",
-    name: { en: "Foothills 3rd Branch (Mandarin)" },
+    name: { en: "Foothills 3rd Branch (Mandarin)", zhTw: "山麓第三分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -88,7 +88,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ut-ogden-woodland-mandarin",
-    name: { en: "Woodland Branch (Mandarin)" },
+    name: { en: "Woodland Branch (Mandarin)", zhTw: "伍德蘭分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -105,7 +105,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-hacienda-heights-dawn-haven-mandarin",
-    name: { en: "Dawn Haven Ward (Mandarin)" },
+    name: { en: "Dawn Haven Ward (Mandarin)", zhTw: "曙光港支會（國語）" },
     type: "ward",
     language: "mandarin",
     status: "active",
@@ -122,7 +122,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-san-marino-mountain-view-chinese",
-    name: { en: "Mountain View (Chinese) Ward" },
+    name: { en: "Mountain View (Chinese) Ward", zhTw: "山景支會（中文）" },
     type: "ward",
     language: "mandarin",
     status: "active",
@@ -139,7 +139,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-oakland-7th-chinese",
-    name: { en: "Oakland 7th (Chinese) Branch" },
+    name: { en: "Oakland 7th (Chinese) Branch", zhTw: "奧克蘭第七分會（中文）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -156,7 +156,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-rancho-palos-verdes-peninsula-chinese",
-    name: { en: "Peninsula (Chinese) Branch" },
+    name: { en: "Peninsula (Chinese) Branch", zhTw: "半島分會（中文）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -173,7 +173,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-colma-san-francisco-7th-chinese",
-    name: { en: "San Francisco 7th (Chinese) Branch" },
+    name: { en: "San Francisco 7th (Chinese) Branch", zhTw: "三藩市第七分會（中文）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -190,7 +190,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-cupertino-mandarin",
-    name: { en: "Cupertino Ward (Mandarin)" },
+    name: { en: "Cupertino Ward (Mandarin)", zhTw: "庫比蒂諾支會（國語）" },
     type: "ward",
     language: "mandarin",
     status: "active",
@@ -207,7 +207,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-ontario-orchard-park-mandarin",
-    name: { en: "Orchard Park Branch (Mandarin)" },
+    name: { en: "Orchard Park Branch (Mandarin)", zhTw: "果園公園分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -224,7 +224,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-irvine-yale-mandarin",
-    name: { en: "Yale Ward (Mandarin)" },
+    name: { en: "Yale Ward (Mandarin)", zhTw: "耶魯支會（國語）" },
     type: "ward",
     language: "mandarin",
     status: "active",
@@ -241,7 +241,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-santa-ana-grand-mandarin",
-    name: { en: "Grand Branch (Mandarin)" },
+    name: { en: "Grand Branch (Mandarin)", zhTw: "格蘭德分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -258,7 +258,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-tustin-pioneer-mandarin",
-    name: { en: "Pioneer Branch (Mandarin)" },
+    name: { en: "Pioneer Branch (Mandarin)", zhTw: "先鋒分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -275,7 +275,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-pleasanton-amador-valley-mandarin",
-    name: { en: "Amador Valley Branch (Mandarin)" },
+    name: { en: "Amador Valley Branch (Mandarin)", zhTw: "阿馬多爾谷分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -292,7 +292,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-union-city-3rd-discontinued",
-    name: { en: "Union City 3rd Branch" },
+    name: { en: "Union City 3rd Branch", zhTw: "聯合市第三分會" },
     type: "branch",
     language: "mandarin",
     status: "discontinued",
@@ -309,7 +309,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-alhambra-valley-mandarin",
-    name: { en: "Valley Branch (Mandarin)" },
+    name: { en: "Valley Branch (Mandarin)", zhTw: "山谷分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -326,7 +326,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "tx-sugar-land-maplewood-3rd-chinese",
-    name: { en: "Maplewood 3rd (Chinese) Branch" },
+    name: { en: "Maplewood 3rd (Chinese) Branch", zhTw: "楓林第三分會（中文）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -343,7 +343,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "tx-plano-5th-mandarin",
-    name: { en: "Plano 5th Branch (Mandarin)" },
+    name: { en: "Plano 5th Branch (Mandarin)", zhTw: "普萊諾第五分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -360,7 +360,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ny-brooklyn-chinatown-chinese",
-    name: { en: "Chinatown Ward (Chinese)" },
+    name: { en: "Chinatown Ward (Chinese)", zhTw: "華埠支會（中文）" },
     type: "ward",
     language: "mandarin",
     status: "active",
@@ -377,7 +377,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ny-brooklyn-8th-mandarin",
-    name: { en: "Brooklyn 8th Branch (Mandarin)" },
+    name: { en: "Brooklyn 8th Branch (Mandarin)", zhTw: "布魯克林第八分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -394,7 +394,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ny-flushing-2nd-chinese",
-    name: { en: "Flushing 2nd Ward (Chinese)" },
+    name: { en: "Flushing 2nd Ward (Chinese)", zhTw: "法拉盛第二支會（中文）" },
     type: "ward",
     language: "mandarin",
     status: "active",
@@ -411,7 +411,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ma-cambridge-kendall-square-mandarin",
-    name: { en: "Kendall Square Ward (Mandarin)" },
+    name: { en: "Kendall Square Ward (Mandarin)", zhTw: "肯德爾廣場支會（國語）" },
     type: "ward",
     language: "mandarin",
     status: "active",
@@ -428,7 +428,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "md-gaithersburg-montgomery-mandarin",
-    name: { en: "Montgomery (Mandarin) Branch" },
+    name: { en: "Montgomery (Mandarin) Branch", zhTw: "蒙哥馬利分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -445,7 +445,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "va-centreville-twin-lakes-chinese",
-    name: { en: "Twin Lakes Branch (Chinese)" },
+    name: { en: "Twin Lakes Branch (Chinese)", zhTw: "雙湖分會（中文）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -462,7 +462,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "fl-orlando-bear-bay-mandarin",
-    name: { en: "Bear Bay Branch (Mandarin)" },
+    name: { en: "Bear Bay Branch (Mandarin)", zhTw: "熊灣分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -479,7 +479,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "wa-mercer-island-island-crest-mandarin",
-    name: { en: "Island Crest Ward (Mandarin)" },
+    name: { en: "Island Crest Ward (Mandarin)", zhTw: "島峰支會（國語）" },
     type: "ward",
     language: "mandarin",
     status: "active",
@@ -496,7 +496,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "nv-las-vegas-spring-mountain-mandarin",
-    name: { en: "Spring Mountain Branch (Mandarin)" },
+    name: { en: "Spring Mountain Branch (Mandarin)", zhTw: "春山分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -513,7 +513,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "uk-newcastle-mandarin",
-    name: { en: "Newcastle Branch (Mandarin)" },
+    name: { en: "Newcastle Branch (Mandarin)", zhTw: "紐卡素分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -530,7 +530,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-bc-richmond-2nd-chinese",
-    name: { en: "Richmond 2nd (Chinese) Branch" },
+    name: { en: "Richmond 2nd (Chinese) Branch", zhTw: "列治文第二分會（中文）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -547,7 +547,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-bc-burnaby-vancouver-wah-yan-chinese",
-    name: { en: "Vancouver Wah Yan Ward (Chinese)" },
+    name: { en: "Vancouver Wah Yan Ward (Chinese)", zhTw: "溫哥華華仁支會（中文）" },
     type: "ward",
     language: "mandarin",
     status: "active",
@@ -564,7 +564,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-on-north-york-bayview-mandarin",
-    name: { en: "Bayview (Mandarin) Ward" },
+    name: { en: "Bayview (Mandarin) Ward", zhTw: "灣景支會（國語）" },
     type: "ward",
     language: "mandarin",
     status: "active",
@@ -581,7 +581,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-ab-calgary-varsity-mandarin",
-    name: { en: "Varsity Ward (Mandarin)" },
+    name: { en: "Varsity Ward (Mandarin)", zhTw: "大學區支會（國語）" },
     type: "ward",
     language: "mandarin",
     status: "active",
@@ -598,7 +598,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-qc-montreal-mount-royal-mandarin",
-    name: { en: "Mount Royal (Mandarin) Branch" },
+    name: { en: "Mount Royal (Mandarin) Branch", zhTw: "皇家山分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -615,7 +615,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "ca-on-richmond-hill-markham-cantonese",
-    name: { en: "Markham (Cantonese) Ward" },
+    name: { en: "Markham (Cantonese) Ward", zhTw: "萬錦支會（粵語）" },
     type: "ward",
     language: "cantonese",
     status: "active",
@@ -632,7 +632,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "au-nsw-punchbowl-bankstown-3rd-cantonese",
-    name: { en: "Bankstown 3rd Branch (Cantonese)" },
+    name: { en: "Bankstown 3rd Branch (Cantonese)", zhTw: "賓士鎮第三分會（粵語）" },
     type: "branch",
     language: "cantonese",
     status: "active",
@@ -649,7 +649,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "au-nsw-ryde-mandarin",
-    name: { en: "Ryde Ward (Mandarin)" },
+    name: { en: "Ryde Ward (Mandarin)", zhTw: "賴德支會（國語）" },
     type: "ward",
     language: "mandarin",
     status: "active",
@@ -666,7 +666,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "au-vic-melbourne-1st-mandarin",
-    name: { en: "Melbourne 1st Branch (Mandarin)" },
+    name: { en: "Melbourne 1st Branch (Mandarin)", zhTw: "墨爾本第一分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -683,7 +683,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "au-qld-eight-mile-plains-sunnybank-mandarin",
-    name: { en: "Sunnybank Branch (Mandarin)" },
+    name: { en: "Sunnybank Branch (Mandarin)", zhTw: "新利班分會（國語）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -700,7 +700,7 @@ const branchRecords: Branch[] = [
   },
   {
     id: "nz-auckland-cbd-3rd-chinese",
-    name: { en: "Auckland 3rd Branch (Chinese)" },
+    name: { en: "Auckland 3rd Branch (Chinese)", zhTw: "奧克蘭第三分會（中文）" },
     type: "branch",
     language: "mandarin",
     status: "active",
@@ -727,7 +727,59 @@ const officialUrls: Partial<Record<string, string>> = {
   "ut-salt-lake-6th-chinese":
     "https://local.churchofjesuschrist.org/zh-hant/units/us/ut/salt-lake-6th-ward-chinese",
   "ut-logan-foothills-3rd-mandarin":
-    "https://local.churchofjesuschrist.org/zh-hant/units/us/ut/foothills-3rd-branch-mandarin"
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ut/foothills-3rd-branch-mandarin",
+  "ut-ogden-woodland-mandarin":
+    "https://local.churchofjesuschrist.org/en/units/us/ut/woodland-branch-mandarin",
+  "ca-hacienda-heights-dawn-haven-mandarin":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ca/dawn-haven-ward-mandarin",
+  "ca-san-marino-mountain-view-chinese":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ca/mountain-view-ward-chinese",
+  "ca-oakland-7th-chinese":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ca/oakland-7th-branch-chinese",
+  "ca-rancho-palos-verdes-peninsula-chinese":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ca/peninsula-branch-chinese",
+  "ca-colma-san-francisco-7th-chinese":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ca/san-francisco-7th-branch-mandarin",
+  "ca-cupertino-mandarin":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ca/cupertino-ward-mandarin",
+  "ca-ontario-orchard-park-mandarin":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ca/orchard-park-branch-mandarin",
+  "ca-irvine-yale-mandarin":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ca/yale-ward-mandarin",
+  "ca-santa-ana-grand-mandarin":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ca/grand-branch-mandarin",
+  "ca-tustin-pioneer-mandarin":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ca/pioneer-branch-mandarin",
+  "ca-pleasanton-amador-valley-mandarin":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ca/amador-valley-branch-mandarin",
+  "tx-sugar-land-maplewood-3rd-chinese":
+    "https://local.churchofjesuschrist.org/en/us/tx/sugar-land/14555-lexington-boulevard",
+  "tx-plano-5th-mandarin":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/tx/plano-5th-branch-mandarin",
+  "ny-brooklyn-chinatown-chinese":
+    "https://local.churchofjesuschrist.org/en/us/ny/new-york-city/41-elizabeth-st",
+  "ny-brooklyn-8th-mandarin":
+    "https://local.churchofjesuschrist.org/en/us/ny/brooklyn/828-60th-street",
+  "ny-flushing-2nd-chinese":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ny/flushing-2nd-ward-mandarin",
+  "ma-cambridge-kendall-square-mandarin":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ma/kendall-square-ward-mandarin",
+  "md-gaithersburg-montgomery-mandarin":
+    "https://local.churchofjesuschrist.org/en/us/md/gaithersburg/16-kent-gardens-circle",
+  "va-centreville-twin-lakes-chinese":
+    "https://local.churchofjesuschrist.org/en/us/va/centreville/14150-upperridge-dr",
+  "fl-orlando-bear-bay-mandarin":
+    "https://local.churchofjesuschrist.org/en/units/us/fl/bear-bay-branch-mandarin",
+  "nv-las-vegas-spring-mountain-mandarin":
+    "https://local.churchofjesuschrist.org/en/units/us/nv/spring-mountain-branch-mandarin",
+  "wa-mercer-island-island-crest-mandarin":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/wa/island-crest-ward-mandarin",
+  "uk-newcastle-mandarin":
+    "https://local.churchofjesuschrist.org/zh-hant/units/gb/tyne-and-wear/newcastle-branch-mandarin",
+  "ca-bc-richmond-2nd-chinese":
+    "https://local.churchofjesuschrist.org/zh-hant/units/ca/bc/richmond-2nd-branch-chinese",
+  "ca-bc-burnaby-vancouver-wah-yan-chinese":
+    "https://local.churchofjesuschrist.org/zh-hant/units/ca/bc/vancouver-wah-yan-ward-chinese"
 };
 
 export const branches: Branch[] = branchRecords.map((branch) => ({
