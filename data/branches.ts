@@ -1,11 +1,11 @@
-import type { Branch } from "@/lib/types";
+﻿import type { Branch } from "@/lib/types";
 
 export const branches: Branch[] = [
   {
     id: "ut-provo-edgemont-22nd",
     name: { en: "Edgemont 22nd Ward (Chinese)" },
     type: "ward",
-    language: "chinese",
+    language: "mandarin",
     status: "active",
     location: {
       lat: 40.2969,
@@ -56,7 +56,7 @@ export const branches: Branch[] = [
     id: "ut-salt-lake-6th-chinese",
     name: { en: "Salt Lake 6th Ward (Chinese)" },
     type: "ward",
-    language: "chinese",
+    language: "mandarin",
     status: "active",
     location: {
       lat: 40.7285,
@@ -124,7 +124,7 @@ export const branches: Branch[] = [
     id: "ca-san-marino-mountain-view-chinese",
     name: { en: "Mountain View (Chinese) Ward" },
     type: "ward",
-    language: "chinese",
+    language: "mandarin",
     status: "active",
     location: {
       lat: 34.1185,
@@ -141,7 +141,7 @@ export const branches: Branch[] = [
     id: "ca-oakland-7th-chinese",
     name: { en: "Oakland 7th (Chinese) Branch" },
     type: "branch",
-    language: "chinese",
+    language: "mandarin",
     status: "active",
     location: {
       lat: 37.8086,
@@ -158,7 +158,7 @@ export const branches: Branch[] = [
     id: "ca-rancho-palos-verdes-peninsula-chinese",
     name: { en: "Peninsula (Chinese) Branch" },
     type: "branch",
-    language: "chinese",
+    language: "mandarin",
     status: "active",
     location: {
       lat: 33.7706,
@@ -175,7 +175,7 @@ export const branches: Branch[] = [
     id: "ca-colma-san-francisco-7th-chinese",
     name: { en: "San Francisco 7th (Chinese) Branch" },
     type: "branch",
-    language: "chinese",
+    language: "mandarin",
     status: "active",
     location: {
       lat: 37.6729,
@@ -328,7 +328,7 @@ export const branches: Branch[] = [
     id: "tx-sugar-land-maplewood-3rd-chinese",
     name: { en: "Maplewood 3rd (Chinese) Branch" },
     type: "branch",
-    language: "chinese",
+    language: "mandarin",
     status: "active",
     location: {
       lat: 29.6046,
@@ -362,7 +362,7 @@ export const branches: Branch[] = [
     id: "ny-brooklyn-chinatown-chinese",
     name: { en: "Chinatown Ward (Chinese)" },
     type: "ward",
-    language: "chinese",
+    language: "mandarin",
     status: "active",
     location: {
       lat: 40.7138,
@@ -396,7 +396,7 @@ export const branches: Branch[] = [
     id: "ny-flushing-2nd-chinese",
     name: { en: "Flushing 2nd Ward (Chinese)" },
     type: "ward",
-    language: "chinese",
+    language: "mandarin",
     status: "active",
     location: {
       lat: 40.7607,
@@ -447,7 +447,7 @@ export const branches: Branch[] = [
     id: "va-centreville-twin-lakes-chinese",
     name: { en: "Twin Lakes Branch (Chinese)" },
     type: "branch",
-    language: "chinese",
+    language: "mandarin",
     status: "active",
     location: {
       lat: 38.8373,
@@ -512,3 +512,4 @@ export const branches: Branch[] = [
     region: "nevada"
   }
 ];
+

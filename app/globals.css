@@ -38,12 +38,14 @@ select {
   font: inherit;
 }
 
-.home-page {
+.home-page,
+.intro-page {
   min-height: 100vh;
   padding: 48px;
 }
 
-.home-hero {
+.home-hero,
+.intro-hero {
   display: grid;
   align-content: center;
   min-height: calc(100vh - 96px);
@@ -87,6 +89,46 @@ h1 {
   margin-top: 32px;
 }
 
+.zh-copy {
+  margin-top: 12px;
+}
+
+.language-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.language-card {
+  display: grid;
+  gap: 8px;
+  min-height: 116px;
+  align-content: center;
+  padding: 20px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.language-card:hover,
+.language-card:focus {
+  border-color: var(--primary);
+  outline: 2px solid rgb(30 58 95 / 14%);
+}
+
+.language-card span {
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.language-card strong {
+  color: var(--primary);
+  font-size: 1.18rem;
+}
+
 .primary-link,
 .back-link {
   display: inline-flex;
@@ -121,6 +163,29 @@ h1 {
 
 .map-sidebar h1 {
   font-size: 2rem;
+}
+
+.language-switch {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+}
+
+.language-switch a {
+  min-width: 86px;
+  padding: 8px 12px;
+  color: var(--muted);
+  text-align: center;
+  text-decoration: none;
+}
+
+.language-switch a.active {
+  background: var(--surface);
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .filter-panel {
@@ -293,8 +358,13 @@ h1 {
 
 @media (max-width: 800px) {
   .home-page,
+  .intro-page,
   .detail-page {
     padding: 22px;
+  }
+
+  .language-cards {
+    grid-template-columns: 1fr;
   }
 
   .map-page {

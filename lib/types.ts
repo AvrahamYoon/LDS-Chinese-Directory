@@ -3,7 +3,6 @@ export type BranchType = "ward" | "branch";
 export type BranchLanguage =
   | "mandarin"
   | "cantonese"
-  | "chinese"
   | "asian"
   | "mixed";
 
@@ -53,3 +52,5 @@ export type BranchFilters = {
   type: "all" | BranchType;
   language: "all" | BranchLanguage;
 };
+
+export type Locale = "en" | "zh";

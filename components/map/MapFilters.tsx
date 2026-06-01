@@ -1,28 +1,68 @@
 "use client";
 
-import type { BranchFilters } from "@/lib/types";
+import type { BranchFilters, Locale } from "@/lib/types";
 
 type MapFiltersProps = {
   filters: BranchFilters;
+  locale: Locale;
   onChange: (filters: BranchFilters) => void;
 };
 
-export function MapFilters({ filters, onChange }: MapFiltersProps) {
+const copy = {
+  en: {
+    search: "Search",
+    searchPlaceholder: "Name, city, or address",
+    language: "Language",
+    type: "Type",
+    status: "Status",
+    all: "All",
+    mandarin: "Mandarin / Chinese",
+    asian: "Asian YSA",
+    cantonese: "Cantonese",
+    mixed: "Mixed",
+    ward: "Ward",
+    branch: "Branch",
+    active: "Active",
+    unknown: "To be confirmed",
+    discontinued: "Discontinued"
+  },
+  zh: {
+    search: "搜尋",
+    searchPlaceholder: "名稱、城市或地址",
+    language: "語言",
+    type: "類型",
+    status: "狀態",
+    all: "全部",
+    mandarin: "國語 / 中文",
+    asian: "亞洲 YSA",
+    cantonese: "粵語",
+    mixed: "混合",
+    ward: "支會",
+    branch: "分會",
+    active: "活躍",
+    unknown: "待確認",
+    discontinued: "已關停"
+  }
+};
+
+export function MapFilters({ filters, locale, onChange }: MapFiltersProps) {
+  const t = copy[locale];
+
   return (
     <form className="filter-panel">
       <label>
-        搜尋
+        {t.search}
         <input
           value={filters.search}
           onChange={(event) =>
             onChange({ ...filters, search: event.target.value })
           }
-          placeholder="名稱、城市或地址"
+          placeholder={t.searchPlaceholder}
           type="search"
         />
       </label>
       <label>
-        語言
+        {t.language}
         <select
           value={filters.language}
           onChange={(event) =>
@@ -32,14 +72,15 @@ export function MapFilters({ filters, onChange }: MapFiltersProps) {
             })
           }
         >
-          <option value="all">全部</option>
-          <option value="chinese">中文</option>
-          <option value="mandarin">國語 / 普通話</option>
-          <option value="asian">亞洲 YSA</option>
+          <option value="all">{t.all}</option>
+          <option value="mandarin">{t.mandarin}</option>
+          <option value="asian">{t.asian}</option>
+          <option value="cantonese">{t.cantonese}</option>
+          <option value="mixed">{t.mixed}</option>
         </select>
       </label>
       <label>
-        類型
+        {t.type}
         <select
           value={filters.type}
           onChange={(event) =>
@@ -49,13 +90,13 @@ export function MapFilters({ filters, onChange }: MapFiltersProps) {
             })
           }
         >
-          <option value="all">全部</option>
-          <option value="ward">Ward</option>
-          <option value="branch">Branch</option>
+          <option value="all">{t.all}</option>
+          <option value="ward">{t.ward}</option>
+          <option value="branch">{t.branch}</option>
         </select>
       </label>
       <label>
-        狀態
+        {t.status}
         <select
           value={filters.status}
           onChange={(event) =>
@@ -65,10 +106,10 @@ export function MapFilters({ filters, onChange }: MapFiltersProps) {
             })
           }
         >
-          <option value="all">全部</option>
-          <option value="active">活躍</option>
-          <option value="unknown">待確認</option>
-          <option value="discontinued">已停用</option>
+          <option value="all">{t.all}</option>
+          <option value="active">{t.active}</option>
+          <option value="unknown">{t.unknown}</option>
+          <option value="discontinued">{t.discontinued}</option>
         </select>
       </label>
     </form>

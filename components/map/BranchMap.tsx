@@ -2,14 +2,30 @@
 
 import { useEffect, useRef } from "react";
 import L from "leaflet";
-import type { Branch } from "@/lib/types";
+import type { Branch, Locale } from "@/lib/types";
 import { formatBranchType, formatLanguage, formatStatus } from "@/lib/format";
 
 type BranchMapProps = {
   branches: Branch[];
+  locale: Locale;
 };
 
-const UTAH_CENTER: L.LatLngExpression = [40.25, -111.78];
+const UNITED_STATES_CENTER: L.LatLngExpression = [39.5, -98.35];
+
+const popupCopy = {
+  en: {
+    type: "Type",
+    language: "Language",
+    status: "Status",
+    details: "View details"
+  },
+  zh: {
+    type: "類型",
+    language: "語言",
+    status: "狀態",
+    details: "查看詳情"
+  }
+};
 
 function markerColor(branch: Branch) {
   if (branch.status === "discontinued") {
@@ -31,7 +47,8 @@ function createMarkerIcon(branch: Branch) {
   });
 }
 
-function popupHtml(branch: Branch) {
+function popupHtml(branch: Branch, locale: Locale) {
+  const t = popupCopy[locale];
   const address = [
     branch.location.address,
     branch.location.city,
@@ -46,16 +63,25 @@ function popupHtml(branch: Branch) {
       <strong>${branch.name.en}</strong>
       <p>${address}</p>
       <dl>
-        <div><dt>類型</dt><dd>${formatBranchType(branch.type)}</dd></div>
-        <div><dt>語言</dt><dd>${formatLanguage(branch.language)}</dd></div>
-        <div><dt>狀態</dt><dd>${formatStatus(branch.status)}</dd></div>
+        <div><dt>${t.type}</dt><dd>${formatBranchType(
+          branch.type,
+          locale
+        )}</dd></div>
+        <div><dt>${t.language}</dt><dd>${formatLanguage(
+          branch.language,
+          locale
+        )}</dd></div>
+        <div><dt>${t.status}</dt><dd>${formatStatus(
+          branch.status,
+          locale
+        )}</dd></div>
       </dl>
-      <a href="/branches/${branch.id}">查看詳情</a>
+      <a href="/branches/${branch.id}?lang=${locale}">${t.details}</a>
     </div>
   `;
 }
 
-export function BranchMap({ branches }: BranchMapProps) {
+export function BranchMap({ branches, locale }: BranchMapProps) {
   const mapElementRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<L.Map | null>(null);
   const layerRef = useRef<L.LayerGroup | null>(null);
@@ -66,8 +92,8 @@ export function BranchMap({ branches }: BranchMapProps) {
     }
 
     const map = L.map(mapElementRef.current, {
-      center: UTAH_CENTER,
-      zoom: 7,
+      center: UNITED_STATES_CENTER,
+      zoom: 4,
       scrollWheelZoom: true
     });
 
@@ -103,7 +129,7 @@ export function BranchMap({ branches }: BranchMapProps) {
         icon: createMarkerIcon(branch),
         title: branch.name.en
       })
-        .bindPopup(popupHtml(branch), {
+        .bindPopup(popupHtml(branch, locale), {
           closeButton: true,
           maxWidth: 280
         })
@@ -116,7 +142,7 @@ export function BranchMap({ branches }: BranchMapProps) {
       );
       map.fitBounds(bounds, { padding: [42, 42], maxZoom: 11 });
     }
-  }, [branches]);
+  }, [branches, locale]);
 
   return <div ref={mapElementRef} className="leaflet-map" />;
 }
