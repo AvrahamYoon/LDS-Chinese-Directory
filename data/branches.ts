@@ -104,6 +104,26 @@ const branchRecords: Branch[] = [
     region: "utah"
   },
   {
+    id: "az-phoenix-happy-valley-mandarin",
+    name: { en: "Happy Valley Branch (Mandarin)", zhTw: "快樂谷分會（國語）" },
+    type: "branch",
+    language: "mandarin",
+    status: "active",
+    location: {
+      lat: 33.7126,
+      lng: -112.1365,
+      address: "3527 West Happy Valley Road",
+      city: "Phoenix",
+      state: "AZ",
+      postalCode: "85310",
+      country: "US"
+    },
+    region: "arizona",
+    founded: "2025-02",
+    notes:
+      "Arizona's first Mandarin-speaking branch. Sunday worship service begins at 12:30 PM."
+  },
+  {
     id: "ca-hacienda-heights-dawn-haven-mandarin",
     name: { en: "Dawn Haven Ward (Mandarin)", zhTw: "曙光港支會（國語）" },
     type: "ward",
@@ -119,6 +139,24 @@ const branchRecords: Branch[] = [
       country: "US"
     },
     region: "california"
+  },
+  {
+    id: "ca-rancho-cucamonga-vineyard-mandarin",
+    name: { en: "Vineyard Branch (Mandarin)", zhTw: "葡萄園分會（國語）" },
+    type: "branch",
+    language: "mandarin",
+    status: "active",
+    location: {
+      lat: 34.1354,
+      lng: -117.5944,
+      address: "6541 Woodruff Place",
+      city: "Rancho Cucamonga",
+      state: "CA",
+      postalCode: "91701",
+      country: "US"
+    },
+    region: "california",
+    notes: "Sunday worship service begins at 10:30 AM."
   },
   {
     id: "ca-san-marino-mountain-view-chinese",
@@ -714,6 +752,23 @@ const branchRecords: Branch[] = [
       country: "NZ"
     },
     region: "new-zealand"
+  },
+  {
+    id: "my-sibu-chinese",
+    name: { en: "Sibu Chinese Branch", zhTw: "詩巫中文分會" },
+    type: "branch",
+    language: "mandarin",
+    status: "active",
+    location: {
+      lat: 2.2873,
+      lng: 111.8305,
+      address: "22, Jalan Bunga Dahlia, Taman Seduan 8",
+      city: "Sibu",
+      state: "Sarawak",
+      postalCode: "96000",
+      country: "MY"
+    },
+    region: "malaysia"
   }
 ];
 
@@ -730,8 +785,12 @@ const officialUrls: Partial<Record<string, string>> = {
     "https://local.churchofjesuschrist.org/zh-hant/units/us/ut/foothills-3rd-branch-mandarin",
   "ut-ogden-woodland-mandarin":
     "https://local.churchofjesuschrist.org/en/units/us/ut/woodland-branch-mandarin",
+  "az-phoenix-happy-valley-mandarin":
+    "https://local.churchofjesuschrist.org/en/units/us/az/happy-valley-branch-mandarin",
   "ca-hacienda-heights-dawn-haven-mandarin":
     "https://local.churchofjesuschrist.org/zh-hant/units/us/ca/dawn-haven-ward-mandarin",
+  "ca-rancho-cucamonga-vineyard-mandarin":
+    "https://local.churchofjesuschrist.org/en/units/us/ca/vineyard-branch-mandarin",
   "ca-san-marino-mountain-view-chinese":
     "https://local.churchofjesuschrist.org/zh-hant/units/us/ca/mountain-view-ward-chinese",
   "ca-oakland-7th-chinese":
@@ -795,7 +854,9 @@ const officialUrls: Partial<Record<string, string>> = {
   "au-vic-melbourne-1st-mandarin":
     "https://local.churchofjesuschrist.org/zh-hant/units/au/vic/melbourne-1st-branch-mandarin",
   "nz-auckland-cbd-3rd-chinese":
-    "https://local.churchofjesuschrist.org/zh-hant/units/nz/-/auckland-3rd-branch-chinese"
+    "https://local.churchofjesuschrist.org/zh-hant/units/nz/-/auckland-3rd-branch-chinese",
+  "my-sibu-chinese":
+    "https://local.churchofjesuschrist.org/en/my/sibu/22-jalan-bunga-dahlia-taman-seduan-8"
 };
 
 export const branches: Branch[] = branchRecords.map((branch) => ({

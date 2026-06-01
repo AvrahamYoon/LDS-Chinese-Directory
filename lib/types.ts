@@ -10,6 +10,7 @@ export type BranchStatus = "active" | "discontinued" | "unknown";
 
 export type BranchRegion =
   | "utah"
+  | "arizona"
   | "california"
   | "texas"
   | "new-york"
@@ -21,7 +22,8 @@ export type BranchRegion =
   | "united-kingdom"
   | "canada"
   | "australia"
-  | "new-zealand";
+  | "new-zealand"
+  | "malaysia";
 
 export type Branch = {
   id: string;
