@@ -46,6 +46,7 @@ export type Branch = {
   founded?: string;
   discontinued?: string;
   notes?: string;
+  officialUrl?: string;
   sources?: string[];
   lastVerified?: string;
 };

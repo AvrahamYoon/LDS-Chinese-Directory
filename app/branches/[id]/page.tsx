@@ -24,7 +24,8 @@ const copy = {
     status: "Status",
     address: "Meetinghouse address",
     chineseName: "Chinese name",
-    pending: "To be added"
+    pending: "To be added",
+    officialPage: "Open official church page"
   },
   zh: {
     back: "返回地圖",
@@ -32,7 +33,8 @@ const copy = {
     status: "狀態",
     address: "聚會教堂地址",
     chineseName: "中文名稱",
-    pending: "待補"
+    pending: "待補",
+    officialPage: "前往官方教會頁面"
   }
 };
 
@@ -84,6 +86,16 @@ export default async function BranchPage({
             <dd>{address}</dd>
           </div>
         </dl>
+        {branch.officialUrl ? (
+          <a
+            className="official-link"
+            href={branch.officialUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
+            {t.officialPage}
+          </a>
+        ) : null}
         {branch.notes ? <p className="detail-notes">{branch.notes}</p> : null}
       </article>
     </main>

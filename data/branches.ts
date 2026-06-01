@@ -1,6 +1,6 @@
 ﻿import type { Branch } from "@/lib/types";
 
-export const branches: Branch[] = [
+const branchRecords: Branch[] = [
   {
     id: "ut-provo-edgemont-22nd",
     name: { en: "Edgemont 22nd Ward (Chinese)" },
@@ -716,4 +716,23 @@ export const branches: Branch[] = [
     region: "new-zealand"
   }
 ];
+
+const officialUrls: Partial<Record<string, string>> = {
+  "ut-provo-edgemont-22nd":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ut/edgemont-22nd-ward-chinese",
+  "ut-provo-ysa-asian-1st":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ut/provo-ysa-asian-1st-ward",
+  "ut-provo-ysa-asian-2nd":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ut/provo-ysa-asian-2nd-ward",
+  "ut-salt-lake-6th-chinese":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ut/salt-lake-6th-ward-chinese",
+  "ut-logan-foothills-3rd-mandarin":
+    "https://local.churchofjesuschrist.org/zh-hant/units/us/ut/foothills-3rd-branch-mandarin"
+};
+
+export const branches: Branch[] = branchRecords.map((branch) => ({
+  ...branch,
+  officialUrl: officialUrls[branch.id]
+}));
+
 
