@@ -948,7 +948,7 @@
     "id": "mo-macao-1st",
     "name": {
       "en": "Macau 1st Branch",
-      "zhTw": "??????"
+      "zhTw": "澳門第一分會"
     },
     "type": "branch",
     "language": "mandarin",
@@ -964,5 +964,445 @@
     },
     "region": "macau",
     "officialUrl": "https://local.churchofjesuschrist.org/en/mo/-/macao"
+  },
+  {
+    "id": "hk-wan-chai-mandarin",
+    "name": {
+      "en": "Wan Chai Branch (Mandarin)",
+      "zhTw": "灣仔分會"
+    },
+    "type": "branch",
+    "language": "mandarin",
+    "location": {
+      "lat": 22.2807,
+      "lng": 114.1769,
+      "address": "G-7/F, 118 Gloucester Road",
+      "city": "Wan Chai",
+      "state": "Hong Kong Island",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "Hong Kong China District, Mandarin-speaking unit. Chinese address: 灣仔告士打道118號 G-7/F.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/district-international-info",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-kwai-chung-cantonese",
+    "name": {
+      "en": "Kwai Chung Ward",
+      "zhTw": "葵涌支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.3583,
+      "lng": 114.1274,
+      "address": "G/F, 9 Mei Fong Street, 87 Wing Fong Road",
+      "city": "Kwai Chung",
+      "state": "New Territories",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "China Hong Kong Kowloon Stake, Cantonese-speaking unit. Chinese address: 葵涌葵芳榮芳路87號美芳街9號地下.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/Kowloon_Stake",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-tsuen-wan-cantonese",
+    "name": {
+      "en": "Tsuen Wan Ward",
+      "zhTw": "荃灣支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.3535,
+      "lng": 114.1053,
+      "address": "32 Ching King Road",
+      "city": "Tsing Yi",
+      "state": "New Territories",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "China Hong Kong Kowloon Stake, Cantonese-speaking unit. Chinese address: 青衣青敬路32號.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/Kowloon_Stake",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-tsing-yu-cantonese",
+    "name": {
+      "en": "Tsing Yu Ward",
+      "zhTw": "青嶼支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.3535,
+      "lng": 114.1053,
+      "address": "32 Ching King Road",
+      "city": "Tsing Yi",
+      "state": "New Territories",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "China Hong Kong Kowloon Stake, Cantonese-speaking unit. Chinese address: 青衣青敬路32號.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/Kowloon_Stake",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-olympic-cantonese",
+    "name": {
+      "en": "Olympic Ward",
+      "zhTw": "奧運支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.3375,
+      "lng": 114.1787,
+      "address": "18 Dorset Road",
+      "city": "Kowloon Tong",
+      "state": "Kowloon",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "China Hong Kong Kowloon Stake, Cantonese-speaking unit. Chinese address: 九龍塘多實街18號.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/Kowloon_Stake",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-wong-tai-sin-cantonese",
+    "name": {
+      "en": "Wong Tai Sin Ward",
+      "zhTw": "黃大仙支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.3375,
+      "lng": 114.1787,
+      "address": "18 Dorset Road",
+      "city": "Kowloon Tong",
+      "state": "Kowloon",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "China Hong Kong Kowloon Stake, Cantonese-speaking unit. Chinese address: 九龍塘多實街18號.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/Kowloon_Stake",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-kowloon-city-cantonese",
+    "name": {
+      "en": "Kowloon City Ward",
+      "zhTw": "九龍城支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.3198,
+      "lng": 114.181,
+      "address": "2-3/F, 11 Shek Ku Street",
+      "city": "Ho Man Tin",
+      "state": "Kowloon",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "China Hong Kong Kowloon Stake, Cantonese-speaking unit. Chinese address: 九龍何文田石鼓街11號2-3樓.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/Kowloon_Stake",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-aberdeen-cantonese",
+    "name": {
+      "en": "Aberdeen Ward",
+      "zhTw": "香港仔支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.2481,
+      "lng": 114.1547,
+      "address": "5-7/F, Lee Kwan Commercial Building, 233 Aberdeen Main Road",
+      "city": "Aberdeen",
+      "state": "Hong Kong Island",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "China Hong Kong Victoria Harbour Stake, Cantonese-speaking unit. Chinese address: 香港仔大道233號利群商業大廈5-7樓.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/Victoria_Habour_Stake",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-chai-wan-cantonese",
+    "name": {
+      "en": "Chai Wan Ward",
+      "zhTw": "柴灣支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.2807,
+      "lng": 114.1769,
+      "address": "4/F, 118 Gloucester Road",
+      "city": "Wan Chai",
+      "state": "Hong Kong Island",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "China Hong Kong Victoria Harbour Stake, Cantonese-speaking unit. Chinese address: 灣仔告士打道118號4樓.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/Victoria_Habour_Stake",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-sai-wan-cantonese",
+    "name": {
+      "en": "Sai Wan Ward",
+      "zhTw": "西環支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.2807,
+      "lng": 114.1769,
+      "address": "5-6/F, 118 Gloucester Road",
+      "city": "Wan Chai",
+      "state": "Hong Kong Island",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "China Hong Kong Victoria Harbour Stake, Cantonese-speaking unit. Chinese address: 灣仔告士打道118號5-6樓.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/Victoria_Habour_Stake",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-kwun-tong-cantonese",
+    "name": {
+      "en": "Kwun Tong Ward",
+      "zhTw": "觀塘支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.323,
+      "lng": 114.2133,
+      "address": "Room A-E, 2/F, Tak Bo Garden, 3 Ngau Tau Kok Road",
+      "city": "Kowloon Bay",
+      "state": "Kowloon",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "China Hong Kong Victoria Harbour Stake, Cantonese-speaking unit. Chinese address: 九龍灣牛頭角道3號得寶花園2樓A-E室.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/Victoria_Habour_Stake",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-tai-wai-cantonese",
+    "name": {
+      "en": "Tai Wai Ward",
+      "zhTw": "大圍支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.3735,
+      "lng": 114.1801,
+      "address": "1 Chung Ling Lane",
+      "city": "Tai Wai",
+      "state": "New Territories",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "China Hong Kong Tolo Harbour Stake, Cantonese-speaking unit. Chinese address: 新界沙田大圍松嶺里一號.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-tai-po-cantonese",
+    "name": {
+      "en": "Tai Po Ward",
+      "zhTw": "大埔支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.4488,
+      "lng": 114.1666,
+      "address": "18 Wan Tau Kok Lane",
+      "city": "Tai Po",
+      "state": "New Territories",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "China Hong Kong Tolo Harbour Stake, Cantonese-speaking unit. Chinese address: 新界大埔運頭角里18號.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/th-meeting",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-ma-on-shan-cantonese",
+    "name": {
+      "en": "Ma On Shan Ward",
+      "zhTw": "馬鞍山支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.4219,
+      "lng": 114.2315,
+      "address": "Shop 1, G/F, Villa Athena, 15 On Chun Street",
+      "city": "Ma On Shan",
+      "state": "New Territories",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "China Hong Kong Tolo Harbour Stake, Cantonese-speaking unit. Chinese address: 新界馬鞍山鞍駿街15號雅濤居商場地下一號舖.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/th-meeting",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-sheung-shui-cantonese",
+    "name": {
+      "en": "Sheung Shui Ward",
+      "zhTw": "上水支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.5002,
+      "lng": 114.1455,
+      "address": "41 Hoi Wing Road, Ma Liu Shui San Tsuen",
+      "city": "Fanling",
+      "state": "New Territories",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "China Hong Kong Tolo Harbour Stake, Cantonese-speaking unit. Chinese address: 新界粉嶺馬料水新村凱榮路41號.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/th-meeting",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-yuen-long-1st-cantonese",
+    "name": {
+      "en": "Yuen Long 1st Ward",
+      "zhTw": "元朗第一支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.4453,
+      "lng": 114.0299,
+      "address": "Lai Chi Yuen, Au Tau",
+      "city": "Yuen Long",
+      "state": "New Territories",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "Cantonese-speaking unit. Chinese address: 新界元朗拗頭荔枝園. Sacrament meeting: 9:00 AM; Sunday School / auxiliary organizations / priesthood: 10:10 AM.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/nt-info?lang=zho",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-yuen-long-2nd-cantonese",
+    "name": {
+      "en": "Yuen Long 2nd Ward",
+      "zhTw": "元朗第二支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.4453,
+      "lng": 114.0299,
+      "address": "Lai Chi Yuen, Au Tau",
+      "city": "Yuen Long",
+      "state": "New Territories",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "Cantonese-speaking unit. Chinese address: 新界元朗拗頭荔枝園. Sacrament meeting: 10:30 AM; Sunday School / auxiliary organizations / priesthood: 11:40 AM.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/nt-info?lang=zho",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-tuen-mun-cantonese",
+    "name": {
+      "en": "Tuen Mun Ward",
+      "zhTw": "屯門支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.395,
+      "lng": 113.973,
+      "address": "G/F, Kam Bo Building, 5 Tsing Min Path",
+      "city": "Tuen Mun",
+      "state": "New Territories",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "Cantonese-speaking unit. Chinese address: 新界屯門青棉徑5號金寶大廈地下. Sacrament meeting: 9:00 AM; Sunday School / auxiliary organizations / priesthood: 10:10 AM.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/nt-info?lang=zho",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-tin-shui-wai-cantonese",
+    "name": {
+      "en": "Tin Shui Wai Ward",
+      "zhTw": "天水圍支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.433,
+      "lng": 113.998,
+      "address": "181 Castle Peak Road, Hung Shui Kiu",
+      "city": "Yuen Long",
+      "state": "New Territories",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "Cantonese-speaking unit. Chinese address: 新界元朗洪水橋青山公路181號. Sacrament meeting: 9:30 AM; Sunday School / auxiliary organizations / priesthood: 10:40 AM.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/nt-info?lang=zho",
+    "status": "active",
+    "region": "hong-kong"
+  },
+  {
+    "id": "hk-hung-shui-kiu-cantonese",
+    "name": {
+      "en": "Hung Shui Kiu Ward",
+      "zhTw": "洪水橋支會"
+    },
+    "type": "ward",
+    "language": "cantonese",
+    "location": {
+      "lat": 22.433,
+      "lng": 113.998,
+      "address": "181 Castle Peak Road, Hung Shui Kiu",
+      "city": "Yuen Long",
+      "state": "New Territories",
+      "postalCode": "",
+      "country": "HK"
+    },
+    "notes": "Cantonese-speaking unit. Chinese address: 新界元朗洪水橋青山公路181號.",
+    "officialUrl": "https://hk.churchofjesuschrist.org/location/stake/nt-info?lang=zho",
+    "status": "active",
+    "region": "hong-kong"
   }
 ]
