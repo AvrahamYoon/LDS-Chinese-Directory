@@ -447,6 +447,20 @@ h1 {
 
 .branch-popup-group {
   min-width: 260px;
+  max-height: min(420px, 56vh);
+  padding-right: 6px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+.branch-popup-group::-webkit-scrollbar {
+  width: 8px;
+}
+
+.branch-popup-group::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--border-strong);
 }
 
 .branch-popup-group ul {

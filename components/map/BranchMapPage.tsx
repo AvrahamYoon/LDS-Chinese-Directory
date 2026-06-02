@@ -58,6 +58,18 @@ export function BranchMapPage({
     [branches, filters]
   );
 
+  const visibleTemples = useMemo(() => {
+    if (!showTemples) {
+      return [];
+    }
+
+    if (filters.region === "all") {
+      return temples;
+    }
+
+    return temples.filter((temple) => temple.region === filters.region);
+  }, [filters.region, showTemples, temples]);
+
   const availableRegions = useMemo(
     () =>
       Array.from(new Set(branches.map((branch) => branch.region))).sort(
@@ -111,7 +123,7 @@ export function BranchMapPage({
         <BranchMap
           branches={filteredBranches}
           locale={locale}
-          temples={showTemples ? temples : []}
+          temples={visibleTemples}
         />
       </section>
     </main>
