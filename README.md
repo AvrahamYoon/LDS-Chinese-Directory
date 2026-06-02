@@ -17,12 +17,17 @@ The project currently focuses on a lightweight public directory experience: an i
 
 ## Tech Stack
 
-- Next.js App Router
-- TypeScript
-- React
-- Leaflet
-- OpenStreetMap tile layer
-- Plain CSS in `app/globals.css`
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Leaflet](https://img.shields.io/badge/Leaflet-199900?style=flat&logo=leaflet&logoColor=white)](https://leafletjs.com/)
+[![OpenStreetMap](https://img.shields.io/badge/OpenStreetMap-7EBC6F?style=flat&logo=openstreetmap&logoColor=white)](https://www.openstreetmap.org/)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/docs/Web/CSS)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)](https://vercel.com/)
+
+This project uses the Next.js App Router, React Server Components, TypeScript,
+Leaflet map rendering, OpenStreetMap tiles, and plain CSS in
+`app/globals.css`.
 
 ## Getting Started
 
@@ -57,6 +62,7 @@ app/
   page.tsx                 Intro and language selection page
   map/page.tsx             Map page
   branches/[id]/page.tsx   Unit detail page
+  layout.tsx               App metadata and AI usage directives
 components/
   map/BranchMap.tsx        Leaflet map and marker popups
   map/BranchMapPage.tsx    Map page shell and filter state
@@ -67,6 +73,9 @@ lib/
   filterBranches.ts        Search/filter logic
   format.ts                Labels and locale helpers
   types.ts                 Shared TypeScript types
+middleware.ts              AI crawler blocking and robots response headers
+public/
+  robots.txt               Crawler policy, including AI crawler disallow rules
 ```
 
 ## Data Model
@@ -105,6 +114,22 @@ https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
 ```
 
 This is fine for development and light early usage. For larger public traffic, switch to a dedicated tile provider such as MapTiler, Stadia, CARTO, or another provider with explicit production usage terms.
+
+## AI Crawler Protection
+
+The site includes a lightweight crawler protection layer:
+
+- `public/robots.txt` disallows common AI training and answer crawlers.
+- `middleware.ts` returns `403` for known AI crawler user agents such as
+  `GPTBot`, `ClaudeBot`, `CCBot`, `PerplexityBot`, `Google-Extended`, and
+  related crawlers.
+- App metadata adds `noai` and `noimageai` directives.
+
+These controls are useful for well-behaved crawlers and obvious AI user agents.
+They are not a full security boundary against spoofed user agents or aggressive
+scraping. For heavier public traffic, pair this with host-level protections such
+as Cloudflare/WAF rules, rate limits, bot challenges, or authenticated access for
+sensitive routes.
 
 ## Deployment
 
