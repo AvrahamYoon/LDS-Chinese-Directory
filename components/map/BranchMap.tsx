@@ -20,8 +20,11 @@ type BranchLocationGroup = {
 };
 
 const UNITED_STATES_CENTER: L.LatLngExpression = [39.5, -98.35];
-const SINGLE_BRANCH_MIN_ZOOM = 5;
 const SPARSE_GROUP_LIMIT = 16;
+const DENSE_CLUSTER_REGIONS = new Set<Branch["region"]>([
+  "taiwan",
+  "hong-kong"
+]);
 
 const popupCopy = {
   en: {
@@ -320,44 +323,63 @@ function clusterBranchGroups(
     return groups;
   }
 
-  const zoom = map.getZoom();
-  const maxDistance = clusterDistanceForZoom(zoom);
-  const clusters: BranchLocationGroup[] = [];
+  const regularGroups = groups.filter(
+    (group) => !DENSE_CLUSTER_REGIONS.has(group.branches[0].region)
+  );
+  const denseGroupsByRegion = new Map<Branch["region"], BranchLocationGroup[]>();
 
   groups.forEach((group) => {
-    const point = map.latLngToLayerPoint([group.lat, group.lng]);
-    const matchingCluster = clusters.find((cluster) => {
-      const clusterPoint = map.latLngToLayerPoint([cluster.lat, cluster.lng]);
-      return point.distanceTo(clusterPoint) <= maxDistance;
-    });
+    const region = group.branches[0].region;
 
-    if (!matchingCluster) {
-      clusters.push({
-        kind: group.kind,
-        lat: group.lat,
-        lng: group.lng,
-        branches: [...group.branches]
-      });
+    if (!DENSE_CLUSTER_REGIONS.has(region)) {
       return;
     }
 
-    const currentWeight = matchingCluster.branches.length;
-    const nextWeight = group.branches.length;
-    const totalWeight = currentWeight + nextWeight;
-
-    matchingCluster.lat =
-      (matchingCluster.lat * currentWeight + group.lat * nextWeight) /
-      totalWeight;
-    matchingCluster.lng =
-      (matchingCluster.lng * currentWeight + group.lng * nextWeight) /
-      totalWeight;
-    matchingCluster.kind = "area";
-    matchingCluster.branches.push(...group.branches);
+    const regionGroups = denseGroupsByRegion.get(region) ?? [];
+    regionGroups.push(group);
+    denseGroupsByRegion.set(region, regionGroups);
   });
 
-  if (zoom < SINGLE_BRANCH_MIN_ZOOM) {
-    return clusters.filter((cluster) => cluster.branches.length > 1);
-  }
+  const zoom = map.getZoom();
+  const maxDistance = clusterDistanceForZoom(zoom);
+  const clusters: BranchLocationGroup[] = [...regularGroups];
+
+  denseGroupsByRegion.forEach((regionGroups) => {
+    const regionClusters: BranchLocationGroup[] = [];
+
+    regionGroups.forEach((group) => {
+      const point = map.latLngToLayerPoint([group.lat, group.lng]);
+      const matchingCluster = regionClusters.find((cluster) => {
+        const clusterPoint = map.latLngToLayerPoint([cluster.lat, cluster.lng]);
+        return point.distanceTo(clusterPoint) <= maxDistance;
+      });
+
+      if (!matchingCluster) {
+        regionClusters.push({
+          kind: group.kind,
+          lat: group.lat,
+          lng: group.lng,
+          branches: [...group.branches]
+        });
+        return;
+      }
+
+      const currentWeight = matchingCluster.branches.length;
+      const nextWeight = group.branches.length;
+      const totalWeight = currentWeight + nextWeight;
+
+      matchingCluster.lat =
+        (matchingCluster.lat * currentWeight + group.lat * nextWeight) /
+        totalWeight;
+      matchingCluster.lng =
+        (matchingCluster.lng * currentWeight + group.lng * nextWeight) /
+        totalWeight;
+      matchingCluster.kind = "area";
+      matchingCluster.branches.push(...group.branches);
+    });
+
+    clusters.push(...regionClusters);
+  });
 
   return clusters;
 }
