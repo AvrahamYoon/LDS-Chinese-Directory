@@ -122,6 +122,7 @@ export function BranchMapPage({
       <section className="map-canvas-wrap" aria-label="Map">
         <BranchMap
           branches={filteredBranches}
+          expandDenseAreas={filters.region !== "all"}
           locale={locale}
           temples={visibleTemples}
         />

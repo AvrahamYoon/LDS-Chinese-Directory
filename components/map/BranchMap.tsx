@@ -7,6 +7,7 @@ import { formatBranchType, formatLanguage, formatStatus } from "@/lib/format";
 
 type BranchMapProps = {
   branches: Branch[];
+  expandDenseAreas: boolean;
   locale: Locale;
   temples: Temple[];
 };
@@ -293,8 +294,13 @@ function groupBranchesByLocation(branches: Branch[]) {
 
 function clusterBranchGroups(
   map: L.Map,
-  groups: BranchLocationGroup[]
+  groups: BranchLocationGroup[],
+  expandDenseAreas: boolean
 ): BranchLocationGroup[] {
+  if (expandDenseAreas) {
+    return groups;
+  }
+
   const zoom = map.getZoom();
   const maxDistance = clusterDistanceForZoom(zoom);
   const clusters: BranchLocationGroup[] = [];
@@ -335,12 +341,18 @@ function clusterBranchGroups(
   return clusters;
 }
 
-export function BranchMap({ branches, locale, temples }: BranchMapProps) {
+export function BranchMap({
+  branches,
+  expandDenseAreas,
+  locale,
+  temples
+}: BranchMapProps) {
   const mapElementRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<L.Map | null>(null);
   const branchLayerRef = useRef<L.LayerGroup | null>(null);
   const templeLayerRef = useRef<L.LayerGroup | null>(null);
   const branchGroupsRef = useRef<BranchLocationGroup[]>([]);
+  const expandDenseAreasRef = useRef(expandDenseAreas);
   const localeRef = useRef<Locale>(locale);
 
   useEffect(() => {
@@ -376,7 +388,11 @@ export function BranchMap({ branches, locale, temples }: BranchMapProps) {
     const renderBranchLayer = () => {
       branchLayer.clearLayers();
 
-      const clusteredGroups = clusterBranchGroups(map, branchGroupsRef.current);
+      const clusteredGroups = clusterBranchGroups(
+        map,
+        branchGroupsRef.current,
+        expandDenseAreasRef.current
+      );
 
       clusteredGroups.forEach((group) => {
         L.marker([group.lat, group.lng], {
@@ -414,12 +430,17 @@ export function BranchMap({ branches, locale, temples }: BranchMapProps) {
     }
 
     localeRef.current = locale;
+    expandDenseAreasRef.current = expandDenseAreas;
     branchGroupsRef.current = groupBranchesByLocation(branches);
 
     branchLayer.clearLayers();
     templeLayer.clearLayers();
 
-    const clusteredGroups = clusterBranchGroups(map, branchGroupsRef.current);
+    const clusteredGroups = clusterBranchGroups(
+      map,
+      branchGroupsRef.current,
+      expandDenseAreas
+    );
 
     clusteredGroups.forEach((group) => {
       L.marker([group.lat, group.lng], {
@@ -458,9 +479,12 @@ export function BranchMap({ branches, locale, temples }: BranchMapProps) {
 
     if (boundsPoints.length > 0) {
       const bounds = L.latLngBounds(boundsPoints);
-      map.fitBounds(bounds, { padding: [42, 42], maxZoom: 11 });
+      map.fitBounds(bounds, {
+        padding: [42, 42],
+        maxZoom: expandDenseAreas ? 14 : 11
+      });
     }
-  }, [branches, locale, temples]);
+  }, [branches, expandDenseAreas, locale, temples]);
 
   return <div ref={mapElementRef} className="leaflet-map" />;
 }
