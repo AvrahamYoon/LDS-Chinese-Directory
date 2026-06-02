@@ -13,6 +13,7 @@ type BranchMapProps = {
 };
 
 type BranchLocationGroup = {
+  kind: "location" | "area";
   lat: number;
   lng: number;
   branches: Branch[];
@@ -144,6 +145,16 @@ function branchAddress(branch: Branch) {
     .join(", ");
 }
 
+function branchPlace(branch: Branch) {
+  return [
+    branch.location.city,
+    branch.location.state,
+    branch.location.country
+  ]
+    .filter(Boolean)
+    .join(", ");
+}
+
 function popupHtml(branch: Branch, locale: Locale) {
   const t = popupCopy[locale];
   const title = branchTitle(branch, locale);
@@ -228,17 +239,23 @@ function groupedPopupHtml(group: BranchLocationGroup, locale: Locale) {
   }
 
   const t = popupCopy[locale];
-  const address = branchAddress(group.branches[0]);
   const unitsLabel = locale === "zh" ? "個單位" : "units";
+  const isAreaGroup = group.kind === "area";
   const heading =
     locale === "zh"
-      ? `此地點有 ${group.branches.length} ${unitsLabel}`
-      : `${group.branches.length} ${unitsLabel} at this location`;
+      ? `${isAreaGroup ? "此區域" : "此地點"}有 ${group.branches.length} ${unitsLabel}`
+      : `${group.branches.length} ${unitsLabel} in this ${
+          isAreaGroup ? "area" : "location"
+        }`;
+  const groupAddress = isAreaGroup
+    ? ""
+    : `<p>${branchAddress(group.branches[0])}</p>`;
   const branchItems = group.branches
     .map(
       (branch) => `
         <li>
           <strong>${branchTitle(branch, locale)}</strong>
+          <p>${isAreaGroup ? branchPlace(branch) : branchAddress(branch)}</p>
           <dl>
             <div><dt>${t.type}</dt><dd>${formatBranchType(
               branch.type,
@@ -262,7 +279,7 @@ function groupedPopupHtml(group: BranchLocationGroup, locale: Locale) {
   return `
     <div class="branch-popup branch-popup-group">
       <strong>${heading}</strong>
-      <p>${address}</p>
+      ${groupAddress}
       <ul>
         ${branchItems}
       </ul>
@@ -283,6 +300,7 @@ function groupBranchesByLocation(branches: Branch[]) {
     }
 
     groups.set(key, {
+      kind: "location",
       lat: branch.location.lat,
       lng: branch.location.lng,
       branches: [branch]
@@ -314,6 +332,7 @@ function clusterBranchGroups(
 
     if (!matchingCluster) {
       clusters.push({
+        kind: group.kind,
         lat: group.lat,
         lng: group.lng,
         branches: [...group.branches]
@@ -331,6 +350,7 @@ function clusterBranchGroups(
     matchingCluster.lng =
       (matchingCluster.lng * currentWeight + group.lng * nextWeight) /
       totalWeight;
+    matchingCluster.kind = "area";
     matchingCluster.branches.push(...group.branches);
   });
 

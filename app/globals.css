@@ -478,6 +478,11 @@ h1 {
   border-top: 1px solid var(--border);
 }
 
+.branch-popup-group li p {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
 .branch-popup-group li:first-child {
   padding-top: 0;
   border-top: 0;
