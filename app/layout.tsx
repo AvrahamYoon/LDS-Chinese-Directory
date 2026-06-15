@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Inter, Noto_Sans_TC } from "next/font/google";
-import { SiteFooter, SiteFooterFallback } from "@/components/SiteFooter";
+import { SiteFooter } from "@/components/SiteFooter";
 import { LocaleHtmlLang, LocaleProvider } from "@/lib/locale";
 import "./globals.css";
 
@@ -43,9 +43,7 @@ export default function RootLayout({
           <LocaleProvider>
             <LocaleHtmlLang />
             <div className="site-main">{children}</div>
-            <Suspense fallback={<SiteFooterFallback />}>
-              <SiteFooter />
-            </Suspense>
+            <SiteFooter />
           </LocaleProvider>
         </Suspense>
       </body>
