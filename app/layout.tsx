@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SiteFooter } from "@/components/SiteFooter";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-Hant">
-      <body>{children}</body>
+      <body className="site-shell">
+        <div className="site-main">{children}</div>
+        <SiteFooter />
+      </body>
     </html>
   );
 }
