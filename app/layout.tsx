@@ -1,6 +1,21 @@
 import type { Metadata } from "next";
-import { SiteFooter } from "@/components/SiteFooter";
+import { Suspense } from "react";
+import { Inter, Noto_Sans_TC } from "next/font/google";
+import { SiteFooter, SiteFooterFallback } from "@/components/SiteFooter";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap"
+});
+
+const notoSansTC = Noto_Sans_TC({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-zh",
+  display: "swap"
+});
 
 export const metadata: Metadata = {
   title: "LDS Chinese Directory",
@@ -21,10 +36,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-Hant">
+    <html className={`${inter.variable} ${notoSansTC.variable}`} lang="zh-Hant">
       <body className="site-shell">
         <div className="site-main">{children}</div>
-        <SiteFooter />
+        <Suspense fallback={<SiteFooterFallback />}>
+          <SiteFooter />
+        </Suspense>
       </body>
     </html>
   );
