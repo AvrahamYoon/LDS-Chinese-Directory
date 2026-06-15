@@ -1,7 +1,6 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import { normalizeLocale } from "@/lib/format";
+import { useLocale } from "@/lib/locale";
 import type { Locale } from "@/lib/types";
 
 const copy: Record<
@@ -33,8 +32,7 @@ export function SiteFooterFallback() {
 }
 
 export function SiteFooter() {
-  const searchParams = useSearchParams();
-  const locale = normalizeLocale(searchParams.get("lang") ?? undefined);
+  const { locale } = useLocale();
 
   return <SiteFooterContent locale={locale} />;
 }

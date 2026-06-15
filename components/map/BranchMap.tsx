@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import L from "leaflet";
 import type { Branch, Locale, Temple, TempleStatus } from "@/lib/types";
 import { formatBranchType, formatLanguage, formatStatus } from "@/lib/format";
@@ -397,6 +397,13 @@ export function BranchMap({
   const branchGroupsRef = useRef<BranchLocationGroup[]>([]);
   const expandDenseAreasRef = useRef(expandDenseAreas);
   const localeRef = useRef<Locale>(locale);
+  const renderSignatureRef = useRef("");
+
+  const renderSignature = useMemo(
+    () =>
+      `${branches.length}:${expandDenseAreas}:${temples.length}:${temples.map((temple) => temple.id).join(",")}`,
+    [branches, expandDenseAreas, temples]
+  );
 
   useEffect(() => {
     if (!mapElementRef.current || mapRef.current) {
@@ -515,6 +522,13 @@ export function BranchMap({
         .addTo(templeLayer);
     });
 
+    const dataChanged = renderSignatureRef.current !== renderSignature;
+    renderSignatureRef.current = renderSignature;
+
+    if (!dataChanged) {
+      return;
+    }
+
     const boundsPoints = [
       ...branches.map((branch) => [branch.location.lat, branch.location.lng]),
       ...temples.map((temple) => [temple.location.lat, temple.location.lng])
@@ -527,7 +541,7 @@ export function BranchMap({
         maxZoom: expandDenseAreas ? 14 : 11
       });
     }
-  }, [branches, expandDenseAreas, locale, temples]);
+  }, [branches, expandDenseAreas, locale, renderSignature, temples]);
 
   return <div ref={mapElementRef} className="leaflet-map" />;
 }

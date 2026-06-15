@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Inter, Noto_Sans_TC } from "next/font/google";
 import { SiteFooter, SiteFooterFallback } from "@/components/SiteFooter";
+import { LocaleHtmlLang, LocaleProvider } from "@/lib/locale";
 import "./globals.css";
 
 const inter = Inter({
@@ -36,11 +37,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={`${inter.variable} ${notoSansTC.variable}`} lang="zh-Hant">
+    <html className={`${inter.variable} ${notoSansTC.variable}`} lang="en">
       <body className="site-shell">
-        <div className="site-main">{children}</div>
-        <Suspense fallback={<SiteFooterFallback />}>
-          <SiteFooter />
+        <Suspense fallback={null}>
+          <LocaleProvider>
+            <LocaleHtmlLang />
+            <div className="site-main">{children}</div>
+            <Suspense fallback={<SiteFooterFallback />}>
+              <SiteFooter />
+            </Suspense>
+          </LocaleProvider>
         </Suspense>
       </body>
     </html>

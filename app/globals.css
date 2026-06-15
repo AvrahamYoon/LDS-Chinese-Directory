@@ -406,6 +406,18 @@ h1 {
   letter-spacing: -0.02em;
 }
 
+.map-sidebar-intro {
+  display: grid;
+  gap: 0;
+  min-height: 220px;
+  transition: opacity 160ms ease;
+}
+
+.map-sidebar-intro.is-locale-pending,
+.detail-panel.is-locale-pending {
+  opacity: 0.72;
+}
+
 .language-switch {
   display: inline-flex;
   gap: 4px;
@@ -414,26 +426,43 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--surface-muted);
+  transition: opacity 160ms ease;
 }
 
-.language-switch a {
+.language-switch.is-pending {
+  opacity: 0.8;
+}
+
+.language-switch button {
   min-width: 86px;
   padding: 8px 12px;
+  border: 0;
   border-radius: 999px;
+  background: transparent;
   color: var(--muted);
   text-align: center;
-  text-decoration: none;
+  cursor: pointer;
   transition:
     background 160ms ease,
     color 160ms ease,
     box-shadow 160ms ease;
 }
 
-.language-switch a.active {
+.language-switch button.active {
   background: var(--surface);
   color: var(--primary);
   font-weight: 700;
   box-shadow: 0 1px 6px rgb(28 31 36 / 10%);
+}
+
+.language-switch button:hover,
+.language-switch button:focus {
+  color: var(--primary);
+  outline: none;
+}
+
+.language-switch button:focus-visible {
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 18%);
 }
 
 .filter-panel {
@@ -516,6 +545,17 @@ h1 {
   min-height: 320px;
   background: var(--surface-muted);
   color: var(--muted);
+  animation: map-loading-fade 240ms ease;
+}
+
+@keyframes map-loading-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .branch-marker {
@@ -738,9 +778,18 @@ h1 {
   padding: 32px;
 }
 
+.detail-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
 .back-link {
   min-height: 38px;
-  margin-bottom: 24px;
+  margin-bottom: 0;
   padding: 0 16px;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -766,6 +815,7 @@ h1 {
   border-radius: var(--radius-lg);
   background: var(--surface);
   box-shadow: var(--shadow-card);
+  transition: opacity 160ms ease;
 }
 
 .detail-panel h1 {
@@ -885,5 +935,18 @@ h1 {
   .official-link:hover,
   .official-link:focus {
     transform: none;
+  }
+
+  .map-sidebar-intro,
+  .detail-panel,
+  .language-switch,
+  .map-loading {
+    transition: none;
+    animation: none;
+  }
+
+  .map-sidebar-intro.is-locale-pending,
+  .detail-panel.is-locale-pending {
+    opacity: 1;
   }
 }

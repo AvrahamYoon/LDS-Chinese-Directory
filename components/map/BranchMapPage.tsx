@@ -1,15 +1,15 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
-import type { Branch, BranchFilters, Locale, Temple } from "@/lib/types";
+import { LanguageSwitch } from "@/components/LanguageSwitch";
+import { useLocale } from "@/lib/locale";
+import type { Branch, BranchFilters, Temple } from "@/lib/types";
 import { filterBranches } from "@/lib/filterBranches";
 import { MapFilters } from "./MapFilters";
 
 type BranchMapPageProps = {
   branches: Branch[];
-  locale: Locale;
   temples: Temple[];
 };
 
@@ -49,11 +49,8 @@ const copy = {
   }
 };
 
-export function BranchMapPage({
-  branches,
-  locale,
-  temples
-}: BranchMapPageProps) {
+export function BranchMapPage({ branches, temples }: BranchMapPageProps) {
+  const { isPending, locale } = useLocale();
   const [filters, setFilters] = useState<BranchFilters>(initialFilters);
   const [showTemples, setShowTemples] = useState(true);
   const t = copy[locale];
@@ -86,21 +83,8 @@ export function BranchMapPage({
   return (
     <main className="map-page">
       <aside className="map-sidebar" aria-label="Map filters">
-        <div>
-          <div className="language-switch" aria-label="Language">
-            <Link
-              className={locale === "zh" ? "active" : ""}
-              href="/map?lang=zh"
-            >
-              國語
-            </Link>
-            <Link
-              className={locale === "en" ? "active" : ""}
-              href="/map?lang=en"
-            >
-              English
-            </Link>
-          </div>
+        <div className={`map-sidebar-intro${isPending ? " is-locale-pending" : ""}`}>
+          <LanguageSwitch />
           <p className="eyebrow">{t.eyebrow}</p>
           <h1>{t.title}</h1>
           <p className="sidebar-copy">{t.body}</p>
